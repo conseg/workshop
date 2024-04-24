@@ -56,10 +56,4 @@ contract Pokemon{
     function tradePokemon(address receiver) public onlyOwner{
         owner = receiver;
     }
-
-    function purchasePokemon() public payable{
-        require(msg.value >= 1 gwei);
-        payable(owner).transfer(msg.value);
-        owner = msg.sender;
-    }
 }
